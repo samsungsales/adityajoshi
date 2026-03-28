@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhanvi Silks | Premium Sarees & Ethnic Wear</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Dhanvi Silks</h1>
+        <p>Premium Silks, Handlooms & Occasion Wear</p>
+      </div>
+      <nav>
+        <button id="viewCatalog" class="nav-btn active">Catalog</button>
+        <button id="viewWishlist" class="nav-btn">Wishlist (<span id="wishlistCount">0</span>)</button>
+        <button id="viewCart" class="nav-btn">Cart (<span id="cartCount">0</span>)</button>
+        <a class="admin-link" href="admin/index.html">Admin</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>Celebrate every occasion in timeless weaves</h2>
+        <p>New arrivals curated for weddings, festivals, and gifting.</p>
+      </section>
+
+      <section class="filters card" id="catalogPanel">
+        <h3>Shop Sarees</h3>
+        <div class="filter-grid">
+          <label>
+            Search
+            <input id="searchInput" type="text" placeholder="Banarasi, Kanjivaram, color..." />
+          </label>
+          <label>
+            Category
+            <select id="categoryFilter">
+              <option value="all">All</option>
+            </select>
+          </label>
+          <label>
+            Max Price (₹)
+            <input id="priceFilter" type="range" min="2000" max="30000" step="500" value="30000" />
+            <span id="priceValue">₹30,000</span>
+          </label>
+          <label>
+            Sort
+            <select id="sortFilter">
+              <option value="featured">Featured</option>
+              <option value="low-high">Price: Low to High</option>
+              <option value="high-low">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section id="productGrid" class="product-grid"></section>
+
+      <section id="wishlistPanel" class="card hidden">
+        <h3>Wishlist</h3>
+        <div id="wishlistItems"></div>
+      </section>
+
+      <section id="cartPanel" class="card hidden">
+        <h3>Cart & Checkout</h3>
+        <div id="cartItems"></div>
+        <p class="total">Total: <strong id="cartTotal">₹0</strong></p>
+        <form id="checkoutForm" class="checkout-form">
+          <h4>Checkout</h4>
+          <input required name="name" placeholder="Full name" />
+          <input required name="phone" placeholder="Phone" />
+          <input required name="address" placeholder="Shipping address" />
+          <select required name="paymentMethod">
+            <option value="">Payment Method</option>
+            <option>UPI</option>
+            <option>Credit/Debit Card</option>
+            <option>Cash on Delivery</option>
+          </select>
+          <button type="submit">Place Order</button>
+        </form>
+        <p id="checkoutMessage" class="message"></p>
+      </section>
+
+      <section class="features card">
+        <h3>Business Features Included</h3>
+        <ul>
+          <li>Product discovery with category, search, and price filtering.</li>
+          <li>Wishlist, cart management, and checkout flow.</li>
+          <li>Local order creation and stock updates integrated with admin panel.</li>
+          <li>Admin dashboard for products, inventory, and order tracking.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

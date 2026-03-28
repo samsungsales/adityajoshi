@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhanvi Silks Admin</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="admin-page">
+    <header class="topbar">
+      <div>
+        <h1>Dhanvi Silks Admin</h1>
+        <p>Inventory, orders, and catalog management</p>
+      </div>
+      <nav>
+        <a class="nav-btn" href="../index.html">Back to Store</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card" id="loginCard">
+        <h3>Admin Login</h3>
+        <form id="loginForm" class="checkout-form">
+          <input required id="adminEmail" type="email" placeholder="admin@dhanvisilks.shop" />
+          <input required id="adminPassword" type="password" placeholder="Password" />
+          <button type="submit">Sign in</button>
+        </form>
+        <p>Demo credentials: <strong>admin@dhanvisilks.shop / dhanvi@123</strong></p>
+        <p id="loginMsg" class="message"></p>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <section class="stats">
+          <div class="stat"><p>Total Products</p><h2 id="statProducts">0</h2></div>
+          <div class="stat"><p>In-stock Units</p><h2 id="statStock">0</h2></div>
+          <div class="stat"><p>Total Orders</p><h2 id="statOrders">0</h2></div>
+          <div class="stat"><p>Revenue</p><h2 id="statRevenue">₹0</h2></div>
+        </section>
+
+        <section class="admin-grid">
+          <section class="card">
+            <h3>Add / Update Product</h3>
+            <form id="productForm" class="checkout-form">
+              <input required name="name" placeholder="Product name" />
+              <input required name="category" placeholder="Category" />
+              <input required name="price" type="number" min="100" placeholder="Price" />
+              <input required name="stock" type="number" min="0" placeholder="Stock" />
+              <input required name="image" placeholder="Image URL" />
+              <button type="submit">Save Product</button>
+            </form>
+          </section>
+
+          <section class="card">
+            <h3>Recent Orders</h3>
+            <table class="table">
+              <thead><tr><th>Order ID</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead>
+              <tbody id="ordersBody"></tbody>
+            </table>
+          </section>
+        </section>
+
+        <section class="card">
+          <h3>Catalog Inventory</h3>
+          <table class="table">
+            <thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Action</th></tr></thead>
+            <tbody id="productsBody"></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
